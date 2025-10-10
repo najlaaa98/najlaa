@@ -1,0 +1,75 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0 auto;
+padding: 20px;
+max-width: 900px;
+line-height: 1.6;
+background-color:#778;
+		}
+#wrapper{
+min-width: 320px; 
+max-width: 900px;
+margin: auto; 
+
+}
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 2px solid #000;
+padding-bottom: 15px;
+margin-bottom: 20px;
+}
+.header h1 {
+margin: 0;
+font-size: 28px;
+}
+.header h2 {
+margin: 5px 0 0 0;
+font-size: 18px;
+color: #555;
+}
+.photo img {
+width: 120px;
+height:120px;
+object-fit: cover;
+border: 1px solid #ccc;
+border-radius:3px;
+}
+.infos-perso {
+margin-bottom: 20px;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+}
+td {
+padding: 4px 0;
+text-align: left;
+}
+section {
+margin-top: 20px;
+padding-top: 10px;
+border-top: 1px solid #aaa;
+}
+.annee {
+  font-weight: bold;  
+  color: #555;         
+  margin-left: 5px;    
+}
+
+h2 {
+margin-bottom: 10px;
+color: #222;
+text-transform: uppercase;
+font-size: 20px;
+}
+
+dl dt {
+font-weight: bold;
+margin-top: 10px;
+}
+dl dd {
+margin: 0 0 10px 20px;
+}
+footer {}

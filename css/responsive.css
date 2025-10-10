@@ -1,0 +1,90 @@
+@media only screen and (max-width: 740px) {
+  #wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .infos-perso, section {
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 570px) {
+  #wrapper {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .photo {
+    float: none;
+    margin: 10px auto;
+  }
+
+  .infos-perso, section {
+    float: none;
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  #wrapper {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .header h2 {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .photo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  table td {
+    display: block;
+    font-size: 13px;
+  }
+
+  dl dd {
+    font-size: 14px;
+  }
+
+  footer p {
+    text-align: center;
+  }
+}
