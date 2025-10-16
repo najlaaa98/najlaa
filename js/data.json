@@ -1,0 +1,14 @@
+[
+  { "name": "Python", "level": 5 },
+  { "name": "Java", "level": 4 },
+  { "name": "JavaScript", "level": 5 },
+  { "name": "SQL", "level": 4 },
+  { "name": "HTML5, CSS3", "level": 5 },
+  { "name": "Spring Boot", "level": 3 },
+  { "name": "React", "level": 4 },
+  { "name": "Node.js", "level": 3 },
+  { "name": "Bootstrap", "level": 4 },
+  { "name": "Git", "level": 5 },
+  { "name": "Docker", "level": 3 }
+]
+

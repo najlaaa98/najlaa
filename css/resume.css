@@ -139,3 +139,17 @@ margin-top: 15px;
   opacity: 1;
   bottom: -45px;
 }
+
+
+.stars {
+  margin-left: 8px;
+  color: gold;
+}
+
+.fa-star-o {
+  color: #ccc;
+}
+
+.fa-star {
+  color: gold;
+}
