@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="css/resume.css"/>
   <link rel="stylesheet" href="css/responsive.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <style>
+    
+  </style>
 </head>
 
 <body>
@@ -24,6 +27,7 @@
         <img src="mypic.jpeg" alt="Photo de profil" itemprop="image">
       </div>
     </div>
+
     <div class="infos-perso" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
       <table>
         <tr><td><strong>Nom :</strong> <span itemprop="familyName">AZZAOUI</span></td></tr>
@@ -41,16 +45,28 @@
       <dl>
         <dt itemprop="hasOccupation" itemscope itemtype="https://schema.org/Occupation">
           <span itemprop="name">Stage d'observation</span>
+          <span class="details1"> + </span>
         </dt>
         <dd itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
           <span itemprop="name">Tribunal de Première Instance, Khouribga – Maroc</span>
+          <ul class="tasks" id="tasks1">
+            <li>Observation du fonctionnement administratif et judiciaire.</li>
+            <li>Découverte du système d’archivage et de gestion des dossiers.</li>
+            <li>Participation à la numérisation de documents juridiques.</li>
+          </ul>
         </dd>
 
         <dt itemprop="hasOccupation" itemscope itemtype="https://schema.org/Occupation">
           <span itemprop="name">Stage pratique</span>
+          <span class="details2"> + </span>
         </dt>
         <dd itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
           <span itemprop="name">Office Régional de la Mise en Valeur Agricole du Tadla – Maroc</span>
+          <ul class="tasks" id="tasks2">
+            <li>Développement d’un petit outil interne en HTML/CSS/JavaScript.</li>
+            <li>Analyse du besoin et rédaction de documentation technique.</li>
+            <li>Assistance dans la maintenance des systèmes informatiques.</li>
+          </ul>
         </dd>
       </dl>
     </section>
@@ -84,6 +100,26 @@
         <dd>Université Cadi Ayyad – Marrakech, Maroc</dd>
       </dl>
     </section>
+    <section class="competences">
+  <h2>Compétences</h2>
+  <ul>
+    <li class="competence-category">Langages de programmation :</li>
+    <li class="competence" data-description="Langage polyvalent pour le développement web, data science et IA.">Python</li>
+    <li class="competence" data-description="Langage orienté objet utilisé pour les applications web et Android.">Java</li>
+    <li class="competence" data-description="Langage de script pour dynamiser les pages web.">JavaScript</li>
+    <li class="competence" data-description="Langage de requête pour manipuler les bases de données.">SQL</li>
+    <li class="competence" data-description="Structure et mise en forme des pages web.">HTML5, CSS3</li>
+    <li class="competence-category">Frameworks & Outils :</li>
+    <li class="competence" data-description="Framework Java pour créer des applications web robustes.">Spring Boot</li>
+    <li class="competence" data-description="Bibliothèque JavaScript pour créer des interfaces modernes.">React</li>
+    <li class="competence" data-description="Environnement JavaScript côté serveur.">Node.js</li>
+    <li class="competence" data-description="Framework CSS pour concevoir rapidement des interfaces.">Bootstrap</li>
+    <li class="competence" data-description="Système de gestion de versions collaboratif.">Git</li>
+    <li class="competence" data-description="Plateforme de conteneurisation pour déployer des applications.">Docker</li>
+  </ul>
+</section>
+
+
     <section class="footer">
       <footer>
         <p>
@@ -98,6 +134,75 @@
       </footer>
     </section>
   </div>
+
+  <script>
+
+  //La premiere partie de TP
+    function toggleTasks(button, id) {
+      const allTasks = document.querySelectorAll(".tasks");
+      const allButtons = document.querySelectorAll(".details1, .details2");
+      const currentTasks = document.getElementById(id);
+
+      if (currentTasks.style.display === "block") {
+        currentTasks.style.display = "none";
+        button.textContent = "+";
+        return;
+      }
+
+      allTasks.forEach(task => {
+        task.style.display = "none";
+        task.querySelectorAll("li").forEach(li => {
+          li.style.opacity = 0;
+          li.style.transform = "scale(0.8)";
+        });
+      });
+      allButtons.forEach(btn => btn.textContent = "+");
+
+      currentTasks.style.display = "block";
+      button.textContent = "-";
+
+      const listItems = currentTasks.querySelectorAll("li");
+      listItems.forEach((li, index) => {
+        li.style.opacity = 0;
+        li.style.transform = "scale(0.8)";
+        li.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+
+        setTimeout(() => {
+          li.style.opacity = 1;
+          li.style.transform = "scale(1)";
+        }, index * 300);
+      });
+    }
+
+    document.querySelector(".details1").addEventListener("click", function() {
+      toggleTasks(this, "tasks1");
+    });
+    document.querySelector(".details2").addEventListener("click", function() {
+      toggleTasks(this, "tasks2");
+    });
+//La partie 2 de TP
+    const competences = document.querySelectorAll(".competence");
+
+  competences.forEach(comp => {
+    comp.addEventListener("mouseenter", function() {
+      const tooltipText = this.getAttribute("data-description");
+      const tooltip = document.createElement("div");
+      tooltip.classList.add("tooltip");
+      tooltip.textContent = tooltipText;
+      this.appendChild(tooltip);
+
+    
+      setTimeout(() => tooltip.classList.add("show"), 50);
+    });
+
+    comp.addEventListener("mouseleave", function() {
+      const tooltip = this.querySelector(".tooltip");
+      if (tooltip) {
+        tooltip.classList.remove("show");
+        setTimeout(() => tooltip.remove(), 300); 
+      }
+    });
+  });
+  </script>
 </body>
 </html>
-
